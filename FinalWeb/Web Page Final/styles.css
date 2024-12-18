@@ -1,0 +1,143 @@
+/* Body and Layout */
+body {
+    background-color: #111111;  /* Black background for a bold, ESPN-like feel */
+    color: #f4f4f4;  /* Light text for contrast, similar to ESPN's style */
+    font-family: 'Arial', sans-serif;  /* Clean, sans-serif font for readability */
+    margin: 0;  /* Remove default margin */
+    padding: 0;  /* Remove default padding */
+}
+
+/* Specific styling for the title "NBA Guide" */
+h1 {
+    color: #e60000;  /* ESPN Red for the title text */
+    text-align: center;  /* Center-align the title */
+    font-size: 50px;  /* Larger font size for impact */
+    font-weight: bold;  /* Make the title bold */
+    padding: 15px;  /* Add padding inside the border */
+    border: 5px solid #e60000;  /* Red border around the title */
+    border-radius: 8px;  /* Rounded corners for a modern touch */
+    display: inline-block;  /* Ensure the border wraps around only the text */
+    background-color: #111111;  /* Black background inside the border */
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);  /* Shadow effect for a 3D look */
+}
+
+/* Heading Styles (for h2, h3, etc.) */
+h2, h3 {
+    color: #ffffff;  /* White text for headings */
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* General Section Styling */
+section {
+    padding: 40px 0;
+    text-align: center;  /* Center text in sections for consistency */
+    background-color: #222222;  /* Dark background for sections */
+    border-radius: 12px;  /* Rounded corners */
+    margin-bottom: 40px;  /* Add space between sections */
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);  /* Light shadow for section */
+}
+
+/* Navbar Styling */
+.navbar {
+    background-color: #111111;  /* Black navbar background */
+    padding: 15px 30px;
+}
+
+.navbar .navbar-brand {
+    color: #e60000;  /* ESPN Red for the brand name */
+    font-size: 24px;  /* Larger font for the brand */
+    font-weight: bold;
+}
+
+.navbar .nav-link {
+    color: #f4f4f4;  /* Light text for the links */
+    font-size: 18px;  /* Larger font for readability */
+    padding: 12px 20px;
+    transition: color 0.3s ease;
+}
+
+.navbar .nav-link:hover {
+    color: #e60000;  /* Red hover effect on navbar links */
+}
+
+/* Footer Styling */
+footer {
+    background-color: #111111;  /* Black footer background */
+    color: #f4f4f4;  /* Light text for the footer */
+    padding: 30px 0;
+    margin-top: 50px;
+    text-align: center;
+    font-size: 16px;
+    border-top: 2px solid #e60000;  /* Thin red border at the top */
+}
+
+/* Image Styling */
+img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-top: 20px;
+    object-fit: cover;  /* Ensure images scale properly */
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);  /* Subtle shadow for images */
+}
+
+/* Button Styling */
+button {
+    background-color: #e60000;  /* ESPN Red button background */
+    color: white;  /* White text on the button */
+    border: none;  /* Remove default border */
+    padding: 12px 25px;  /* Add padding for better button size */
+    border-radius: 8px;  /* Rounded corners for buttons */
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;  /* Smooth transition for hover */
+}
+
+button:hover {
+    background-color: #b30000;  /* Darker red on hover */
+}
+
+/* Container Layout */
+.container {
+    margin-top: 60px;
+}
+
+/* Add some spacing between sections */
+section h2 {
+    margin-bottom: 25px;
+}
+
+/* Small tweaks for mobile responsiveness */
+@media (max-width: 768px) {
+    /* Navbar */
+    .navbar {
+        padding: 10px 15px;
+    }
+
+    .navbar .navbar-brand {
+        font-size: 20px;  /* Slightly smaller brand font */
+    }
+
+    .navbar .nav-link {
+        font-size: 16px;  /* Smaller text for mobile */
+        padding: 8px 15px;  /* Smaller padding for mobile links */
+    }
+
+    /* Section padding */
+    section {
+        padding: 30px 0;  /* Less padding on smaller screens */
+    }
+
+    /* Image */
+    img {
+        width: 100%;  /* Ensure images are fully responsive */
+        height: auto;
+    }
+
+    /* Button */
+    button {
+        width: 100%;  /* Make buttons full-width on smaller screens */
+    }
+}
+
