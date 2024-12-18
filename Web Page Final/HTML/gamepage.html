@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NBA Team Guessing Game</title>
+    
+    <!-- Link to Bootstrap CSS for styling -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    
+
+    <!-- Custom styles -->
+    <style>
+        #game-container {
+            background-color: #333;
+            color: #f4f4f4;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .btn-custom {
+            background-color: #e60000;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .btn-custom:hover {
+            background-color: #b30000;
+        }
+
+        .input-field {
+            padding: 10px;
+            width: 50%;
+            margin-top: 10px;
+            font-size: 18px;
+        }
+
+        .feedback {
+            font-size: 1.2em;
+            margin-top: 20px;
+        }
+
+        .result {
+            font-weight: bold;
+            color: #ffcc00;
+        }
+
+        .hint {
+            font-size: 1.1em;
+            margin-top: 20px;
+            color: #ffcc00;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar (Navigation) -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">NBA Guide</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="Frontpage.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="nbahighlights.html">NBA Highlights</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="aboutme.html">About Me</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="nbateamguessing.html">NBA Team Guessing Game</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mt-5">
+        <!-- Header Section -->
+        <header class="text-center">
+            <h1 class="bordered">NBA Team Guessing Game</h1>
+            <p class="lead">Can you guess the NBA team based on the clues?</p>
+        </header>
+
+        <!-- NBA Team Guessing Game Section -->
+        <section id="nba-team-guessing-game" class="mt-5">
+            <div id="game-container">
+                <h3>Guess the NBA Team</h3>
+                <p id="hint">Clue: </p>
+
+                <!-- User Input -->
+                <input type="text" id="guess" class="input-field" placeholder="Enter NBA Team">
+                <br>
+                <button class="btn-custom" onclick="checkGuess()">Submit Guess</button>
+
+                <!-- Feedback -->
+                <div id="feedback" class="feedback"></div>
+                <div id="result" class="result"></div>
+                <div id="hint-container" class="hint"></div>
+            </div>
+        </section>
+    </div> <!-- End container -->
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3 mt-5">
+        <p>&copy; NBA Games | Joey Taylor</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JavaScript for NBA Team Guessing Game -->
+    <script>
+        const teams = [
+            { name: "Los Angeles Lakers", hint: "This team has won 17 NBA championships and is based in LA." },
+            { name: "Golden State Warriors", hint: "Known for their three-point shooting, this team has 7 championships." },
+            { name: "Miami Heat", hint: "This team won 3 championships and has star players like LeBron James and Dwyane Wade." },
+            { name: "Chicago Bulls", hint: "This team dominated in the 90s with Michael Jordan leading the way." },
+            { name: "Boston Celtics", hint: "A historic team with 17 championships, most famously with Bill Russell." },
+            { name: "Brooklyn Nets", hint: "This team is based in Brooklyn and has superstars like Kevin Durant and Kyrie Irving." },
+            { name: "Milwaukee Bucks", hint: "Led by Giannis Antetokounmpo, this team won the 2021 championship." },
+            { name: "Philadelphia 76ers", hint: "This team is home to Joel Embiid and has a historic rivalry with the Boston Celtics." }
+        ];
+
+        // Randomly select a team
+        let selectedTeam = teams[Math.floor(Math.random() * teams.length)];
+        let attempts = 0;
+
+        // Show the hint for the selected team
+        document.getElementById("hint").textContent = "Clue: " + selectedTeam.hint;
+
+        function checkGuess() {
+            let userGuess = document.getElementById("guess").value.trim();
+            let feedback = document.getElementById("feedback");
+            let result = document.getElementById("result");
+
+            attempts++;
+
+            // Check if the guess is correct
+            if (userGuess.toLowerCase() === selectedTeam.name.toLowerCase()) {
+                feedback.textContent = "Congratulations! You guessed the team correctly!";
+                feedback.style.color = "green";
+                result.textContent = `You took ${attempts} attempts to guess the correct team.`;
+                result.style.color = "#ffcc00";
+            } else {
+                feedback.textContent = "Incorrect. Try again!";
+                feedback.style.color = "orange";
+            }
+
+            // Clear the input field after submission
+            document.getElementById("guess").value = "";
+        }
+    </script>
+
+</body>
+</html>
+
